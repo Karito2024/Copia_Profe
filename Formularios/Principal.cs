@@ -12,15 +12,12 @@ using System.Windows.Forms;
 
 namespace ClasesINA.Formularios
 {
-    public partial class Constantes : MaterialForm
+    public partial class Principal : MaterialForm
     {
-        //VALORES CONSTANTES
-        const double PI = 3.14;
-
-
-        public Constantes()
+        public Principal()
         {
             InitializeComponent();
+            /*
             var materialSkinManager = MaterialSkinManager.Instance;
             materialSkinManager.AddFormToManage(this);
 
@@ -31,21 +28,12 @@ namespace ClasesINA.Formularios
                     Primary.Blue500, Accent.LightBlue200,
                     TextShade.WHITE
                 );
+            */
         }
 
-        private void btnImprimirConstante_Click(object sender, EventArgs e)
-        {
-           
-        }
-
-        private void Constantes_Load(object sender, EventArgs e)
+        private void Principal_Load(object sender, EventArgs e)
         {
 
-        }
-
-        private void materialButton1_Click(object sender, EventArgs e)
-        {
-            lblValorConstante.Text = "" + PI;
         }
     }
 }

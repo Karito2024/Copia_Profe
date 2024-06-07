@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MaterialSkin.Controls;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,7 +11,7 @@ using System.Windows.Forms;
 
 namespace ClasesINA.Formularios
 {
-    public partial class ValoresCompuestos : Form
+    public partial class ValoresCompuestos : MaterialForm
     {
         //Arreglo con valores definidos
         string[] sexo = { "Hombre", "Mujer", "Otro" };
@@ -97,5 +98,10 @@ namespace ClasesINA.Formularios
                 }
             }
         }//Finaliza el botón de búsqueda
+
+        private void ValoresCompuestos_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 } 

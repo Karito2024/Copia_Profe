@@ -33,8 +33,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="MaterialSkin, Version=2.3.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\MaterialSkin.2.2.3.1\lib\net461\MaterialSkin.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -52,17 +56,35 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\Acceso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Acceso.Designer.cs">
+      <DependentUpon>Acceso.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\Constantes.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Formularios\Constantes.Designer.cs">
       <DependentUpon>Constantes.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\CreaCuentas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\CreaCuentas.Designer.cs">
+      <DependentUpon>CreaCuentas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\EstructurasDeControl.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Formularios\EstructurasDeControl.Designer.cs">
       <DependentUpon>EstructurasDeControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Principal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Principal.Designer.cs">
+      <DependentUpon>Principal.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\ValoresCompuestos.cs">
       <SubType>Form</SubType>
@@ -75,11 +97,20 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Acceso.resx">
+      <DependentUpon>Acceso.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Constantes.resx">
       <DependentUpon>Constantes.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\CreaCuentas.resx">
+      <DependentUpon>CreaCuentas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\EstructurasDeControl.resx">
       <DependentUpon>EstructurasDeControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Principal.resx">
+      <DependentUpon>Principal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\ValoresCompuestos.resx">
       <DependentUpon>ValoresCompuestos.cs</DependentUpon>
@@ -94,6 +125,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
