@@ -100,6 +100,7 @@
             this.txtPrecioUnitario.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.txtPrecioUnitario.TrailingIcon = null;
             this.txtPrecioUnitario.UseSystemPasswordChar = false;
+            this.txtPrecioUnitario.Leave += new System.EventHandler(this.txtPrecioUnitario_Leave);
             // 
             // slideUnidades
             // 
@@ -111,6 +112,7 @@
             this.slideUnidades.Size = new System.Drawing.Size(267, 40);
             this.slideUnidades.TabIndex = 2;
             this.slideUnidades.Text = "Unidades";
+            this.slideUnidades.onValueChanged += new MaterialSkin.Controls.MaterialSlider.ValueChanged(this.slideUnidades_onValueChanged);
             // 
             // btnProcesarCompra
             // 
@@ -131,6 +133,7 @@
             this.btnProcesarCompra.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.btnProcesarCompra.UseAccentColor = false;
             this.btnProcesarCompra.UseVisualStyleBackColor = true;
+            this.btnProcesarCompra.Click += new System.EventHandler(this.btnProcesarCompra_Click);
             // 
             // txtTotal
             // 
