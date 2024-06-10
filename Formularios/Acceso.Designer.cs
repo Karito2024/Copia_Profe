@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.materialCard1 = new MaterialSkin.Controls.MaterialCard();
-            this.txtUsuario = new MaterialSkin.Controls.MaterialTextBox2();
-            this.txtPassword = new MaterialSkin.Controls.MaterialTextBox2();
             this.materialButton1 = new MaterialSkin.Controls.MaterialButton();
+            this.txtPassword = new MaterialSkin.Controls.MaterialTextBox2();
+            this.txtUsuario = new MaterialSkin.Controls.MaterialTextBox2();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             this.materialCard1.SuspendLayout();
@@ -52,35 +52,27 @@
             this.materialCard1.Padding = new System.Windows.Forms.Padding(14);
             this.materialCard1.Size = new System.Drawing.Size(328, 250);
             this.materialCard1.TabIndex = 0;
+            this.materialCard1.Paint += new System.Windows.Forms.PaintEventHandler(this.materialCard1_Paint);
             // 
-            // txtUsuario
+            // materialButton1
             // 
-            this.txtUsuario.AnimateReadOnly = false;
-            this.txtUsuario.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.txtUsuario.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
-            this.txtUsuario.Depth = 0;
-            this.txtUsuario.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.txtUsuario.HideSelection = true;
-            this.txtUsuario.Hint = "Usuario";
-            this.txtUsuario.LeadingIcon = null;
-            this.txtUsuario.Location = new System.Drawing.Point(50, 46);
-            this.txtUsuario.MaxLength = 32767;
-            this.txtUsuario.MouseState = MaterialSkin.MouseState.OUT;
-            this.txtUsuario.Name = "txtUsuario";
-            this.txtUsuario.PasswordChar = '\0';
-            this.txtUsuario.PrefixSuffixText = null;
-            this.txtUsuario.ReadOnly = false;
-            this.txtUsuario.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.txtUsuario.SelectedText = "";
-            this.txtUsuario.SelectionLength = 0;
-            this.txtUsuario.SelectionStart = 0;
-            this.txtUsuario.ShortcutsEnabled = true;
-            this.txtUsuario.Size = new System.Drawing.Size(250, 48);
-            this.txtUsuario.TabIndex = 0;
-            this.txtUsuario.TabStop = false;
-            this.txtUsuario.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txtUsuario.TrailingIcon = null;
-            this.txtUsuario.UseSystemPasswordChar = false;
+            this.materialButton1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.materialButton1.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.materialButton1.Depth = 0;
+            this.materialButton1.HighEmphasis = true;
+            this.materialButton1.Icon = null;
+            this.materialButton1.Location = new System.Drawing.Point(142, 194);
+            this.materialButton1.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.materialButton1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialButton1.Name = "materialButton1";
+            this.materialButton1.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.materialButton1.Size = new System.Drawing.Size(91, 36);
+            this.materialButton1.TabIndex = 2;
+            this.materialButton1.Text = "Ingresar";
+            this.materialButton1.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.materialButton1.UseAccentColor = false;
+            this.materialButton1.UseVisualStyleBackColor = true;
+            this.materialButton1.Click += new System.EventHandler(this.materialButton1_Click);
             // 
             // txtPassword
             // 
@@ -111,25 +103,34 @@
             this.txtPassword.TrailingIcon = null;
             this.txtPassword.UseSystemPasswordChar = false;
             // 
-            // materialButton1
+            // txtUsuario
             // 
-            this.materialButton1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialButton1.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.materialButton1.Depth = 0;
-            this.materialButton1.HighEmphasis = true;
-            this.materialButton1.Icon = null;
-            this.materialButton1.Location = new System.Drawing.Point(142, 194);
-            this.materialButton1.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.materialButton1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialButton1.Name = "materialButton1";
-            this.materialButton1.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.materialButton1.Size = new System.Drawing.Size(158, 36);
-            this.materialButton1.TabIndex = 2;
-            this.materialButton1.Text = "Ingresar";
-            this.materialButton1.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.materialButton1.UseAccentColor = false;
-            this.materialButton1.UseVisualStyleBackColor = true;
-            this.materialButton1.Click += new System.EventHandler(this.materialButton1_Click);
+            this.txtUsuario.AnimateReadOnly = false;
+            this.txtUsuario.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.txtUsuario.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.txtUsuario.Depth = 0;
+            this.txtUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txtUsuario.HideSelection = true;
+            this.txtUsuario.Hint = "Usuario";
+            this.txtUsuario.LeadingIcon = null;
+            this.txtUsuario.Location = new System.Drawing.Point(50, 46);
+            this.txtUsuario.MaxLength = 32767;
+            this.txtUsuario.MouseState = MaterialSkin.MouseState.OUT;
+            this.txtUsuario.Name = "txtUsuario";
+            this.txtUsuario.PasswordChar = '\0';
+            this.txtUsuario.PrefixSuffixText = null;
+            this.txtUsuario.ReadOnly = false;
+            this.txtUsuario.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.txtUsuario.SelectedText = "";
+            this.txtUsuario.SelectionLength = 0;
+            this.txtUsuario.SelectionStart = 0;
+            this.txtUsuario.ShortcutsEnabled = true;
+            this.txtUsuario.Size = new System.Drawing.Size(250, 48);
+            this.txtUsuario.TabIndex = 0;
+            this.txtUsuario.TabStop = false;
+            this.txtUsuario.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtUsuario.TrailingIcon = null;
+            this.txtUsuario.UseSystemPasswordChar = false;
             // 
             // linkLabel1
             // 

@@ -80,11 +80,23 @@
     <Compile Include="Formularios\EstructurasDeControl.Designer.cs">
       <DependentUpon>EstructurasDeControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\Listas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Listas.Designer.cs">
+      <DependentUpon>Listas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\Principal.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Formularios\Principal.Designer.cs">
       <DependentUpon>Principal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Principal2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Principal2.Designer.cs">
+      <DependentUpon>Principal2.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\ValoresCompuestos.cs">
       <SubType>Form</SubType>
@@ -109,8 +121,14 @@
     <EmbeddedResource Include="Formularios\EstructurasDeControl.resx">
       <DependentUpon>EstructurasDeControl.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Listas.resx">
+      <DependentUpon>Listas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Principal.resx">
       <DependentUpon>Principal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Principal2.resx">
+      <DependentUpon>Principal2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\ValoresCompuestos.resx">
       <DependentUpon>ValoresCompuestos.cs</DependentUpon>
