@@ -15,11 +15,13 @@ namespace ClasesINA.Formularios
     public partial class Principal : MaterialForm
     {
 
-        string[] Vproductos = { }; //declaramos el vector para productos (que esté vacío)
-        int[] VunidadesCompradas = { };//vector para unidades compradas
-        double[] VprecioUnitario = { };
-        double[] Vtotal = { };//vector para el total generado por la linea de compra (unidades * precio)
+        string[] Vproductos = {"Papas"}; //declaramos el vector para productos (que esté vacío)
+        int[] VunidadesCompradas = {2};//vector para unidades compradas
+        double[] VprecioUnitario = {100};
+        double[] Vtotal = {2000};//vector para el total generado por la linea de compra (unidades * precio)
 
+
+        string nombreProductoEliminar = "";
 
         public Principal()
         {
@@ -40,7 +42,20 @@ namespace ClasesINA.Formularios
 
         private void Principal_Load(object sender, EventArgs e)
         {
+            ImprimirCompras();
+        }
 
+        /// <summary>
+        /// Imprime la información del vector dentro del DataGridView
+        /// </summary>
+        private void ImprimirCompras() {
+            dtCompras.Rows.Clear();
+            for (int i = 0; i < Vproductos.Length; i++)
+            {
+                if (Vproductos[i] != "") {
+                    dtCompras.Rows.Add(Vproductos[i], VprecioUnitario[i], VunidadesCompradas[i], Vtotal[i]);
+                }
+            }
         }
 
         private void txtPrecioUnitario_Leave(object sender, EventArgs e)
@@ -124,15 +139,90 @@ namespace ClasesINA.Formularios
                     slideUnidades.Value = 0;//volvemos a hacer que el slide tenga como valor el 0
                     MessageBox.Show("Compra efectuada con éxito");
                     txtProducto.Focus();//para poner el foco dentro del primer campo de texto
-                    dtCompras.Rows.Clear();
-                    for (int i = 0; i < Vproductos.Length; i++) {
-                        dtCompras.Rows.Add(Vproductos[i], VprecioUnitario[i], VunidadesCompradas[i], Vtotal[i]);
-                    }
 
+                    ImprimirCompras();
                 }
             }
 
 
+        }
+
+        private void materialButton2_Click(object sender, EventArgs e)
+        {
+
+            int cantidadFilasSeleccionadas = dtCompras.SelectedRows.Count;
+
+            if (cantidadFilasSeleccionadas <= 0)
+            {
+                MessageBox.Show("Debes seleccionar una fila");
+            }
+            else {
+                if (string.IsNullOrEmpty(nombreProductoEliminar))
+                {
+                    MessageBox.Show("No has seleccionado un producto de la tabla, primero presiónalo");
+                }
+                else {
+                    if (existeProducto(nombreProductoEliminar)) {
+                        int posEliminar = IndiceDelElemento(nombreProductoEliminar);
+                        if (posEliminar < 0)
+                        {
+                            MessageBox.Show("El producto no existe o fue eliminado");
+                        }
+                        else {
+                            EliminarCompra(posEliminar);
+                            MessageBox.Show("Se ha eliminado correctamente la compra");
+                            ImprimirCompras();
+                        }
+                    }
+                }
+            }
+
+        }
+        /// <summary>
+        /// Elimina el la información de los vectores mediante la posición indicada
+        /// </summary>
+        /// <param name="pos">Es la posición de la cual se eliminará toda la información</param>
+        private void EliminarCompra(int pos) {
+            Vproductos[pos] = "";
+            VprecioUnitario[pos] = 0;
+            VunidadesCompradas[pos] = 0;
+            Vtotal[pos] = 0;
+        }
+
+        /// <summary>
+        /// Obtiene el indice del elemento a buscar
+        /// </summary>
+        /// <param name="elemento">Elemento a buscar dentro del vector</param>
+        /// <returns>Posición donde fue encontrado el elemento</returns>
+        private int IndiceDelElemento(string elemento) {
+            return Array.IndexOf(Vproductos, elemento);
+        }
+
+        /// <summary>
+        /// Determina si el producto indicado, existe o no dentro del vector
+        /// </summary>
+        /// <param name="nombreProducto">Cadena (nombre del producto) a buscar dentro del arreglo</param>
+        /// <returns>boolean true: existe False: no existe</returns>
+        private bool existeProducto(string nombreProducto) {
+            return Array.Exists(Vproductos, consulta => consulta == nombreProducto);
+        }
+
+       
+        private void dtCompras_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            Console.WriteLine(dtCompras.Rows.Count);
+            //Aqui obtenemos toda la fila (con todos sus encabezados)
+            DataGridViewRow fila = dtCompras.SelectedRows[0];
+            //aqui obtengo el nombre del producto a eliminar
+            //recordar que el Cells[0] pertenece a la primera columna
+            // Cells[1] sería precio unitario etc...
+            //este valor se lo asigno a la variable global nombreProducto eliminar para poder visualizarlo desde el boton
+            //de eliminar
+            nombreProductoEliminar = fila.Cells[0].Value.ToString();
+
+
+
+            Console.WriteLine(nombreProductoEliminar);
         }
     }
 }

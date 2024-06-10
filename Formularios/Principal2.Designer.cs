@@ -30,12 +30,12 @@
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.facturacionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.facturarProductosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cuentasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.crearCuentaDeUsuarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.Contenedor = new System.Windows.Forms.Panel();
             this.listasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.formularioDeListasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.facturarProductosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.crearCuentaDeUsuarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -60,15 +60,6 @@
             this.facturacionToolStripMenuItem.Size = new System.Drawing.Size(117, 29);
             this.facturacionToolStripMenuItem.Text = "Facturacion";
             // 
-            // facturarProductosToolStripMenuItem
-            // 
-            this.facturarProductosToolStripMenuItem.Image = global::ClasesINA.Properties.Resources.search_engine_optimization;
-            this.facturarProductosToolStripMenuItem.Name = "facturarProductosToolStripMenuItem";
-            this.facturarProductosToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.F)));
-            this.facturarProductosToolStripMenuItem.Size = new System.Drawing.Size(323, 34);
-            this.facturarProductosToolStripMenuItem.Text = "Facturar productos";
-            this.facturarProductosToolStripMenuItem.Click += new System.EventHandler(this.facturarProductosToolStripMenuItem_Click);
-            // 
             // cuentasToolStripMenuItem
             // 
             this.cuentasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -76,17 +67,6 @@
             this.cuentasToolStripMenuItem.Name = "cuentasToolStripMenuItem";
             this.cuentasToolStripMenuItem.Size = new System.Drawing.Size(91, 29);
             this.cuentasToolStripMenuItem.Text = "Cuentas";
-            // 
-            // crearCuentaDeUsuarioToolStripMenuItem
-            // 
-            this.crearCuentaDeUsuarioToolStripMenuItem.Image = global::ClasesINA.Properties.Resources.coche1;
-            this.crearCuentaDeUsuarioToolStripMenuItem.Name = "crearCuentaDeUsuarioToolStripMenuItem";
-            this.crearCuentaDeUsuarioToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.C)));
-            this.crearCuentaDeUsuarioToolStripMenuItem.Size = new System.Drawing.Size(362, 34);
-            this.crearCuentaDeUsuarioToolStripMenuItem.Text = "Crear cuenta de usuario";
-            this.crearCuentaDeUsuarioToolStripMenuItem.ToolTipText = "Esta es una vista previa para que cuando pase el mouse por encima, me de una ayud" +
-    "a para saber a cual forms voy a ingresar";
-            this.crearCuentaDeUsuarioToolStripMenuItem.Click += new System.EventHandler(this.crearCuentaDeUsuarioToolStripMenuItem_Click);
             // 
             // Contenedor
             // 
@@ -111,6 +91,26 @@
             this.formularioDeListasToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
             this.formularioDeListasToolStripMenuItem.Text = "Formulario de listas";
             this.formularioDeListasToolStripMenuItem.Click += new System.EventHandler(this.formularioDeListasToolStripMenuItem_Click);
+            // 
+            // facturarProductosToolStripMenuItem
+            // 
+            this.facturarProductosToolStripMenuItem.Image = global::ClasesINA.Properties.Resources.search_engine_optimization;
+            this.facturarProductosToolStripMenuItem.Name = "facturarProductosToolStripMenuItem";
+            this.facturarProductosToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.F)));
+            this.facturarProductosToolStripMenuItem.Size = new System.Drawing.Size(323, 34);
+            this.facturarProductosToolStripMenuItem.Text = "Facturar productos";
+            this.facturarProductosToolStripMenuItem.Click += new System.EventHandler(this.facturarProductosToolStripMenuItem_Click);
+            // 
+            // crearCuentaDeUsuarioToolStripMenuItem
+            // 
+            this.crearCuentaDeUsuarioToolStripMenuItem.Image = global::ClasesINA.Properties.Resources.coche1;
+            this.crearCuentaDeUsuarioToolStripMenuItem.Name = "crearCuentaDeUsuarioToolStripMenuItem";
+            this.crearCuentaDeUsuarioToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.C)));
+            this.crearCuentaDeUsuarioToolStripMenuItem.Size = new System.Drawing.Size(362, 34);
+            this.crearCuentaDeUsuarioToolStripMenuItem.Text = "Crear cuenta de usuario";
+            this.crearCuentaDeUsuarioToolStripMenuItem.ToolTipText = "Esta es una vista previa para que cuando pase el mouse por encima, me de una ayud" +
+    "a para saber a cual forms voy a ingresar";
+            this.crearCuentaDeUsuarioToolStripMenuItem.Click += new System.EventHandler(this.crearCuentaDeUsuarioToolStripMenuItem_Click);
             // 
             // Principal2
             // 

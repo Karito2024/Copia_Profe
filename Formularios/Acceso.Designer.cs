@@ -88,7 +88,7 @@
             this.txtPassword.MaxLength = 32767;
             this.txtPassword.MouseState = MaterialSkin.MouseState.OUT;
             this.txtPassword.Name = "txtPassword";
-            this.txtPassword.PasswordChar = '-';
+            this.txtPassword.PasswordChar = 'X';
             this.txtPassword.PrefixSuffixText = null;
             this.txtPassword.ReadOnly = false;
             this.txtPassword.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -99,6 +99,7 @@
             this.txtPassword.Size = new System.Drawing.Size(250, 48);
             this.txtPassword.TabIndex = 1;
             this.txtPassword.TabStop = false;
+            this.txtPassword.Text = "123";
             this.txtPassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.txtPassword.TrailingIcon = null;
             this.txtPassword.UseSystemPasswordChar = false;
@@ -128,6 +129,7 @@
             this.txtUsuario.Size = new System.Drawing.Size(250, 48);
             this.txtUsuario.TabIndex = 0;
             this.txtUsuario.TabStop = false;
+            this.txtUsuario.Text = "Admin";
             this.txtUsuario.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.txtUsuario.TrailingIcon = null;
             this.txtUsuario.UseSystemPasswordChar = false;

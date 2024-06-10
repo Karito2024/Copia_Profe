@@ -73,5 +73,37 @@ namespace ClasesINA.Formularios
 
             
         }
-    }
+
+        //inicia la definición de funciones del formulario
+
+        /// <summary>
+        /// Determina si existe o no el valor dentro de la colección
+        /// </summary>
+        /// <param name="elemento">Es el valor que se buscará en la colección</param>
+        /// <returns>boolean</returns>
+        private bool ElementoExiste(int elemento) {
+            bool existe = numerosPredeterminados.Exists(filtro => filtro == elemento);
+            return existe;
+        }
+        /// <summary>
+        /// Registra un valor nuevo a la lista numerosPredeterminados
+        /// </summary>
+        /// <param name="valorNuevo">Es el nuevo valor a registrar en la lista</param>
+        private void AgregarElemento(int valorNuevo) {
+            numerosPredeterminados.Add(valorNuevo);
+        }
+
+        private void materialButton4_Click(object sender, EventArgs e)
+        {
+            int valor = int.Parse(txtNumero.Text);
+          
+            if (ElementoExiste(valor))
+            {
+                MessageBox.Show("Existe");
+            }
+            else {
+                AgregarElemento(valor);
+            }
+        }
+    }//finaliza la clase
 }
