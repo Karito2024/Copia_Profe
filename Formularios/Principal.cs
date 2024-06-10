@@ -17,7 +17,8 @@ namespace ClasesINA.Formularios
 
         string[] Vproductos = { }; //declaramos el vector para productos (que esté vacío)
         int[] VunidadesCompradas = { };//vector para unidades compradas
-        double[] VprecioUnitario, Vtotal = { };//vector para el total generado por la linea de compra (unidades * precio)
+        double[] VprecioUnitario = { };
+        double[] Vtotal = { };//vector para el total generado por la linea de compra (unidades * precio)
 
 
         public Principal()
@@ -44,30 +45,58 @@ namespace ClasesINA.Formularios
 
         private void txtPrecioUnitario_Leave(object sender, EventArgs e)
         {
-            int precioUnitario = Convert.ToInt32(txtPrecioUnitario.Text);
-            int unidadesCompradas = Convert.ToInt32(slideUnidades.Value);
-            txtTotal.Text = "" + precioUnitario * unidadesCompradas;
+            //primero determinamos si el ususuario digitó algo
+            if (txtPrecioUnitario.Text.Length >= 0) {
+                double numero = 0;
+                bool EsNumero = double.TryParse(txtPrecioUnitario.Text, out numero);
+
+                if (EsNumero)
+                {
+                    double precioUnitario = Convert.ToDouble(txtPrecioUnitario.Text);
+                    int unidadesCompradas = Convert.ToInt32(slideUnidades.Value);
+                    txtTotal.Text = "" + precioUnitario * unidadesCompradas;
+                }
+                else {
+                    txtPrecioUnitario.Focus();
+                    txtPrecioUnitario.Hint = "Debe ser número";//
+                    txtPrecioUnitario.SelectAll();
+                    txtPrecioUnitario.BackColor = Color.Red;
+                }
+            }
+            
 
         }
 
         private void slideUnidades_onValueChanged(object sender, int newValue)
         {
-            int precioUnitario = Convert.ToInt32(txtPrecioUnitario.Text);
-            int unidadesCompradas = Convert.ToInt32(slideUnidades.Value);
-            txtTotal.Text = "" + precioUnitario * unidadesCompradas;
+            double precio = 0.0;
+            bool precioUnitarioEsNumero = double.TryParse(txtPrecioUnitario.Text,out precio);
+            if (precioUnitarioEsNumero)
+            {
+                int precioUnitario = Convert.ToInt32(txtPrecioUnitario.Text);
+                int unidadesCompradas = Convert.ToInt32(slideUnidades.Value);
+                txtTotal.Text = "" + precioUnitario * unidadesCompradas;
+            }
+            else {
+                txtPrecioUnitario.Hint = "De ser número";
+                txtPrecioUnitario.Focus();
+            }
+           
         }
 
         private void btnProcesarCompra_Click(object sender, EventArgs e)
         {
+            double precio = 0.0;
+
+            //conversión del tipo cadena a int
+            int unidades = (int)slideUnidades.Value;
+            bool precioEsValido = double.TryParse(txtPrecioUnitario.Text, out precio);
+            double total = double.Parse(txtTotal.Text);
+
             string nombreProducto = txtProducto.Text;
-            int unidades = Convert.ToInt32(slideUnidades.Value);
-            double precioUnitario = Convert.ToDouble(txtPrecioUnitario.Text);
-            double total  = Convert.ToDouble(txtTotal.Text);
 
-            
-
-            if (total <= 0 || unidades <= 0 || precioUnitario <= 0) { 
-                MessageBox.Show("Los valores no pueden ser cero");
+            if (total <= 0 || unidades <= 0 || !precioEsValido) { 
+                MessageBox.Show("Los valores no pueden ser cero o valores negativos");
             }else {
                 if (string.IsNullOrEmpty(nombreProducto))
                 {
@@ -75,6 +104,10 @@ namespace ClasesINA.Formularios
                 }
                 else {//acá, entonces empezamos a realizar la inserción
                       //Ahora vamos a redimensionar los vectores
+                   
+                    double precioUnitario = Convert.ToDouble(txtPrecioUnitario.Text);
+                   
+
                     Array.Resize(ref Vproductos, Vproductos.Length + 1);
                     Array.Resize(ref VunidadesCompradas, VunidadesCompradas.Length+1);
                     Array.Resize(ref VprecioUnitario, VprecioUnitario.Length + 1);
@@ -91,6 +124,11 @@ namespace ClasesINA.Formularios
                     slideUnidades.Value = 0;//volvemos a hacer que el slide tenga como valor el 0
                     MessageBox.Show("Compra efectuada con éxito");
                     txtProducto.Focus();//para poner el foco dentro del primer campo de texto
+
+                    for (int i = 0; i < Vproductos.Length; i++) {
+                        dtCompras.Rows.Add(Vproductos[i], VprecioUnitario[i], VunidadesCompradas[i], Vtotal[i]);
+                    }
+
                 }
             }
 

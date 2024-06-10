@@ -49,7 +49,7 @@
             this.txtProducto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.txtProducto.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
             this.txtProducto.Depth = 0;
-            this.txtProducto.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txtProducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.txtProducto.HideSelection = true;
             this.txtProducto.Hint = "Nombre del producto";
             this.txtProducto.LeadingIcon = null;
@@ -78,7 +78,7 @@
             this.txtPrecioUnitario.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.txtPrecioUnitario.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
             this.txtPrecioUnitario.Depth = 0;
-            this.txtPrecioUnitario.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txtPrecioUnitario.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.txtPrecioUnitario.HideSelection = true;
             this.txtPrecioUnitario.Hint = "Precio unitario";
             this.txtPrecioUnitario.LeadingIcon = null;
@@ -160,12 +160,15 @@
             this.txtTotal.Size = new System.Drawing.Size(250, 48);
             this.txtTotal.TabIndex = 4;
             this.txtTotal.TabStop = false;
+            this.txtTotal.Text = "0.0";
             this.txtTotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.txtTotal.TrailingIcon = null;
             this.txtTotal.UseSystemPasswordChar = false;
             // 
             // dtCompras
             // 
+            this.dtCompras.AllowUserToAddRows = false;
+            this.dtCompras.AllowUserToDeleteRows = false;
             this.dtCompras.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtCompras.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtCompras.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -173,11 +176,13 @@
             this.Precio,
             this.Unidades,
             this.Total});
+            this.dtCompras.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.dtCompras.GridColor = System.Drawing.SystemColors.ActiveCaption;
             this.dtCompras.Location = new System.Drawing.Point(24, 318);
             this.dtCompras.Name = "dtCompras";
             this.dtCompras.RowHeadersWidth = 62;
             this.dtCompras.RowTemplate.Height = 28;
+            this.dtCompras.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtCompras.Size = new System.Drawing.Size(737, 150);
             this.dtCompras.TabIndex = 5;
             // 
@@ -223,24 +228,28 @@
             // 
             // Producto
             // 
+            this.Producto.DividerWidth = 1;
             this.Producto.HeaderText = "Nombre producto";
             this.Producto.MinimumWidth = 8;
             this.Producto.Name = "Producto";
             // 
             // Precio
             // 
+            this.Precio.DividerWidth = 1;
             this.Precio.HeaderText = "Precio unitario";
             this.Precio.MinimumWidth = 8;
             this.Precio.Name = "Precio";
             // 
             // Unidades
             // 
+            this.Unidades.DividerWidth = 1;
             this.Unidades.HeaderText = "Unidades compradas";
             this.Unidades.MinimumWidth = 8;
             this.Unidades.Name = "Unidades";
             // 
             // Total
             // 
+            this.Total.DividerWidth = 1;
             this.Total.HeaderText = "Total";
             this.Total.MinimumWidth = 8;
             this.Total.Name = "Total";

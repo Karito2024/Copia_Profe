@@ -20,6 +20,7 @@ namespace ClasesINA.Formularios
         public Acceso()
         {
             InitializeComponent();
+            /*
             var materialSkinManager = MaterialSkinManager.Instance;
             materialSkinManager.AddFormToManage(this);
 
@@ -30,6 +31,7 @@ namespace ClasesINA.Formularios
                     Primary.Blue500, Accent.LightBlue200,
                     TextShade.WHITE
                 );
+            */
         }
 
         private void Acceso_Load(object sender, EventArgs e)
