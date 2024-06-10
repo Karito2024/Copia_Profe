@@ -124,7 +124,7 @@ namespace ClasesINA.Formularios
                     slideUnidades.Value = 0;//volvemos a hacer que el slide tenga como valor el 0
                     MessageBox.Show("Compra efectuada con éxito");
                     txtProducto.Focus();//para poner el foco dentro del primer campo de texto
-
+                    dtCompras.Rows.Clear();
                     for (int i = 0; i < Vproductos.Length; i++) {
                         dtCompras.Rows.Add(Vproductos[i], VprecioUnitario[i], VunidadesCompradas[i], Vtotal[i]);
                     }
