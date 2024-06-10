@@ -225,8 +225,6 @@ namespace ClasesINA.Formularios
             txtTotal.Text = fila.Cells[3].Value.ToString();
 
 
-
-
             Console.WriteLine(nombreProductoEliminar);
         }
     }
