@@ -219,6 +219,11 @@ namespace ClasesINA.Formularios
             //este valor se lo asigno a la variable global nombreProducto eliminar para poder visualizarlo desde el boton
             //de eliminar
             nombreProductoEliminar = fila.Cells[0].Value.ToString();
+            txtProducto.Text = nombreProductoEliminar;
+            txtPrecioUnitario.Text = ""+ fila.Cells[1].Value.ToString();
+            slideUnidades.Value = int.Parse(fila.Cells[2].Value.ToString());
+            txtTotal.Text = fila.Cells[3].Value.ToString();
+
 
 
 
